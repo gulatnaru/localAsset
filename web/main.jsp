@@ -26,6 +26,32 @@
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 
+<style>
+.modal-body div span{
+	display: inline-block;
+	width : 100px;
+	text-align:left;
+}
+.modal-body{
+	text-align:center;
+}
+.nav-item{
+
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+	$('#alogin').click(function(){
+		$('#login_form').attr('method','post');
+		$('#login_form').attr('action','loginout.cacao');
+		$('#login_form').submit();
+	});
+});
+</script>
+
+
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
@@ -37,6 +63,26 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+      		<ul class="navbar-nav ml-auto">
+      		<c:choose>
+				<c:when test="${user.id == null}">
+      		 	<li class="nav-item">
+        			<a class="nav-link" data-toggle="modal" data-target="#exampleModal1">
+       				<i class="fa fa-fw fa-sign-in"></i>Login</a>
+        		</li>
+        		</c:when>
+        		<c:otherwise>
+		        <li class="nav-item">
+        			<a class="nav-link" data-toggle="modal" data-target="#exampleModal2">
+       				${user.name }님 환영합니다. <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        		</li>
+        	    </c:otherwise>
+			</c:choose>
+      		</ul>
+    	</div>
+		
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
@@ -96,7 +142,82 @@
 		</c:choose>
 	</section>
 
+<!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright  Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Login Modal-->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">login</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+	      </div>
+	      <form id="login_form">
+	        <div class="modal-body">
+	          	<div>
+					<span>ID</span><input type="text" name="id"><br>
+				</div>
+				<div>
+					<span>PWD</span><input type="password" name="pwd"><br>
+				</div>
+	        </div>         		
+	        <div class="modal-footer">
+            	<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            	<a class="btn btn-primary" id="alogin">Login</a>
+          	</div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+     <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="loginout.cacao">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.min.js"></script>
+  </div>
 
 
 </body>

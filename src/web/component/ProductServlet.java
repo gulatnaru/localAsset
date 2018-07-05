@@ -34,7 +34,7 @@ public class ProductServlet extends HttpServlet {
 		String cmd = request.getParameter("cmd");
 		String next = "main.jsp";
 		MultipartRequest mRequest = null;
-		String dir = "C:\\Users\\Yang's\\eclipse-workspace\\day08\\web\\img";
+		String dir = "C:\\js\\day071\\web\\img";
 		int size = 1024 * 1024 * 1024;
 		
 		if(cmd.equals("add")) {
