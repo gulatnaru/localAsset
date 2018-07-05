@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public abstract class Biz<T,V> {
-	String user = "scott";
-	String password = "tiger";
-	String url = "jdbc:oracle:thin:@127.0.0.1:1521:orcl";
+	String user = "db";
+	String password = "db";
+	String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
 	
 	public Biz() {
 		try {
