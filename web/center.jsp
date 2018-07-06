@@ -5,7 +5,9 @@
 		width: 600px;
 		height: 400px;
 		margin: 0 auto;
-		background: white;
+		background-image:url('img/background_hamberger.jpg');
+		background-repeat: no-repeat;
+		background-size: 100%;
 		text-align: center;
 	}
 </style>

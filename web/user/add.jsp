@@ -44,6 +44,7 @@
     <div class="container-fluid">
       <!-- Example DataTables Card-->
       <div class="card mb-3">
+      	 <div class="card-body">
           <div class="table-responsive">
           <form action="user.cacao?cmd=add" method="post">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -66,19 +67,13 @@
             </table>
            </form>
           </div>
+         </div>
         </div>
         <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
-      <div class="container">
-        <div class="text-center">
-          <small>Copyright Yang Your Website 2018</small>
-        </div>
-      </div>
-    </footer>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>

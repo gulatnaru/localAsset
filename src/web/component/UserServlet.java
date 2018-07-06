@@ -87,7 +87,6 @@ public class UserServlet extends HttpServlet {
 				e1.printStackTrace();
 			}
 			try {
-				biz.modify(user);
 				request.setAttribute("navi", "update");
 				request.setAttribute("userupdate", user);
 				request.setAttribute("center", "user/update");
@@ -103,6 +102,8 @@ public class UserServlet extends HttpServlet {
 			User user = null;
 			try {
 				user = new User(id,pwd,name);
+				biz.modify(user);
+				System.out.println("updateimpl.user : "+user);
 				request.setAttribute("navi", "detail");
 				request.setAttribute("userdetail", user);
 				request.setAttribute("center", "user/detail");

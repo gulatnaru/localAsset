@@ -1,39 +1,113 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SB Admin - Start Bootstrap Template</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+</head>
+
 <style>
-#main_center {
-	width: 600px;
-	height: 400px;
-	margin: 0 auto;
-	background: white;
-	text-align: center;
-}
+	#tdProduct{
+		width:30%;
+	}
+	#dataTable tr td{
+		vertical-align: middle;
+		text-align: center;
+	}
+	.content-wrapper{
+		background-color: #edeeef;
+		color: #4f4f4f;
+	}
+	.card-body{
+		background-color: #edeeef;
+		color: #4f4f4f;
+	}
 </style>
+
 <script>
-	$(document).ready(function() {
-		$("#pdelete_bt").click(function() {
-			var c = confirm('삭제 하시겠습니까');
-			if (c == true) {
-				location.href = 'product.cacao?cmd=delete&id=${pdetail.id }';
-			}
-			;
-		});
+$(document).ready(function() {
+	$("#pdelete_bt").click(function() {
+		var c = confirm('삭제 하시겠습니까');
+		if (c == true) {
+			location.href = 'product.cacao?cmd=delete&id=${pdetail.id }';
+		}
+		;
 	});
+});
 </script>
-<body>
-	<div id="main_center">
-		<h1>Product Detail</h1>
-		<img width="200px" src="img/${pdetail.imgname }">
-		<h3>${pdetail.id }</h3>
-		<h3>${pdetail.name }</h3>
-		<h3>${pdetail.price }</h3>
-		<h3>${pdetail.regdate }</h3>
-		<a id="pdelete_bt" href="#">DELETE</a> <a
-			href="product.cacao?cmd=update&id=${pdetail.id }">UPDATE</a>
-	</div>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+ 
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+      	 <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th colspan="2">Product Detail</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th colspan="2"></th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr><td colspan="2"><img width="200px" src="img/${pdetail.imgname }"></td></tr>
+                <tr><td colspan="2">${pdetail.id }</td></tr>
+                <tr><td colspan="2">${pdetail.name }</td></tr>
+                <tr><td colspan="2">${pdetail.price }</td></tr>
+                <tr><td colspan="2">${pdetail.regdate }</td></tr>
+                <tr><td><a id="pdelete_bt" href="#">DELETE</a></td>
+                	<td><a href="product.cacao?cmd=update&id=${pdetail.id }">UPDATE</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+         </div>
+       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+       </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+   
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+  </div>
 </body>
+
+</html>

@@ -34,7 +34,6 @@ public class DispatcherServlet extends HttpServlet {
 		}else{
 			next = path;
 		}
-		System.out.println("next: "+next);
 		RequestDispatcher rd = request.getRequestDispatcher(next);
 		rd.forward(request, response);
 	}
