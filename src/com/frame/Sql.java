@@ -22,6 +22,19 @@ public class Sql {
 	"SELECT * FROM T_PRODUCT WHERE ID=?";
 	public static String selectallProduct = 
 	"SELECT * FROM T_PRODUCT";	
+
+	public static String insertTable = 
+	"INSERT INTO LOCALASSET VALUES(?,?,?,?,?)";
+	public static String deleteTable = 			
+	"DELETE FROM LOCALASSET WHERE CODE=?";
+	public static String updateTable = 
+	"UPDATE LOCALASSET SET LOCALNAME=?,FISCALYEAR=?,DETAILNAME=?,INCOME=?,INCOMERESULT=?,INDEPENDENT=? WHERE CODE=?";
+	public static String selectTable = 
+	"SELECT * FROM LOCALASSET WHERE CODE=?";
+	public static String selectallTable = 
+	"SELECT * FROM LOCALASSET ";   
+	public static String selectAvg = 
+	"SELECT LOCALNAME, AVG(INCOME) as incomeavg FROM LOCALASSET GROUP BY LOCALNAME";
 }
 
 

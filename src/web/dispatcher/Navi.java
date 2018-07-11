@@ -15,6 +15,11 @@ public class Navi {
 			home + "> USER LIST";
 	public static String productList = 
 			home + "> PRODUCT LIST";
+	public static String weather = 
+			home + "> WEATHER";
+	public static String chart = 
+			home + "> CHART";
+
 
 }
 

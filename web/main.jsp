@@ -117,6 +117,22 @@ $(document).ready(function(){
 						</span>
 					</a>
 				</li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+					<a class="nav-link" href="main.cacao?page=weather"> 
+						<i class="fa fa-fw fa-table"></i> 
+						<span class="nav-link-text">
+							Weather
+						</span>
+					</a>
+				</li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+					<a class="nav-link" href="main.cacao?page=chart"> 
+						<i class="fa fa-fw fa-table"></i> 
+						<span class="nav-link-text">
+							Chart
+						</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</nav>

@@ -38,6 +38,12 @@ public class MakeUi extends HttpServlet {
 			}else if(view.equals("productList")) {
 				request.setAttribute("center", "/product/list");
 				request.setAttribute("nav", Navi.productList);
+			}else if(view.equals("weather")) {
+				request.setAttribute("center", "weather");
+				request.setAttribute("nav", Navi.weather);
+			}else if(view.equals("chart")) {
+				request.setAttribute("center", "table");
+				request.setAttribute("nav", Navi.chart);
 			}
 	}
 }
